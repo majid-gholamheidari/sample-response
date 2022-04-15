@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [\App\Http\Controllers\IndexController::class, 'index']);
+Route::post('/new-json', [\App\Http\Controllers\JsonController::class, 'newJson']);
+Route::get('/show-json/{json}', [\App\Http\Controllers\JsonController::class, 'showJson']);
+Route::post('/examples', [\App\Http\Controllers\JsonController::class, 'examples']);
